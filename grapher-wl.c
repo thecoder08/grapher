@@ -1,4 +1,4 @@
-#include "../3d-engine/engine-wl.h"
+#include <3d-engine/engine-wl.h>
 #define __USE_MISC 1
 #include <math.h>
 
