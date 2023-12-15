@@ -10,6 +10,7 @@ vec3 vertices[10*10];
 int indices[9*9*2*3];
 
 int main() {
+    float t = 0;
     float angleX = 0;
     float angleY = 0;
     float angleZ = 0;
@@ -115,7 +116,7 @@ int main() {
                 float xF = (float)(x-5)/2.0;
                 float zF = (float)(z-5)/2.0;
                 vertices[position][0] = xF;
-                vertices[position][1] = xF*zF; // this is our equation
+                vertices[position][1] = sin(xF*xF + zF*zF + t); // this is our equation
                 vertices[position][2] = zF;
                 if ((x < 9) && (z < 9)) {
                     int index_pos = x * 9 + z;
@@ -128,6 +129,7 @@ int main() {
                 }
             }
         }
+        t += 0.1;
         renderObject(vertices, 100, indices, 486, rotationMatrixA, wireframe);
         updateWindow3D();
     }
